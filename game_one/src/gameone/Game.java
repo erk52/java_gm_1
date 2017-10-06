@@ -16,6 +16,8 @@ public class Game implements Runnable {
 	private BufferStrategy bs;
 	private Graphics g;
 	
+	private BufferedImage test;
+	
 	public Game(String title, int width, int height){
 		this.width = width;
 		this.height = height;
@@ -24,7 +26,7 @@ public class Game implements Runnable {
 	}
 	private void init(){
 		display = new Display(title, width, height);
-		
+		test = ImageLoader.loadImage('textures/sheet.png');
 	}
 	private void tick(){
 		
@@ -40,8 +42,6 @@ public class Game implements Runnable {
 		g.clearRect(0,0,width,height);
 		//Draw shit here
 		
-		g.setColor(Color.red);
-		g.fillRect(10, 50, 50, 70);
 		
 		
 		
