@@ -1,7 +1,7 @@
 package gameone;
 
 import gameone.gfx.ImageLoader;
-
+import gameone.gfx.SpriteSheet;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
@@ -17,6 +17,7 @@ public class Game implements Runnable {
 	private Graphics g;
 	
 	private BufferedImage test;
+	private SpriteSheet sheet;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -27,6 +28,7 @@ public class Game implements Runnable {
 	private void init(){
 		display = new Display(title, width, height);
 		test = ImageLoader.loadImage('textures/sheet.png');
+		sheet = new SpriteSheet(test);
 	}
 	private void tick(){
 		
@@ -41,6 +43,7 @@ public class Game implements Runnable {
 		//Clear screen
 		g.clearRect(0,0,width,height);
 		//Draw shit here
+		//g.drawImage(sheet.crop(0,0, 32, 32), 5, 5, null);
 		
 		
 		
